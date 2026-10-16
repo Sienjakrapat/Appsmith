@@ -1,0 +1,13 @@
+SELECT 
+  sales_header.sale_id, 
+  sales_header.sale_date, 
+  customer.name AS customer_name, 
+  product.product_name, 
+  sales_detail.unit_price, 
+  sales_detail.quantity, 
+  sales_detail.subtotal AS net
+FROM sales_header
+JOIN sales_detail USING (sale_id)
+JOIN product USING (product_id)
+JOIN customer USING (customer_id)
+WHERE sales_header.sale_id = {{data_table.triggeredRow.sale_id}};

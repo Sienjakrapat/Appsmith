@@ -1,0 +1,10 @@
+SELECT 
+  sales_detail_id, 
+  product_name, 
+  price, 
+  sales_qty, 
+  (price * sales_qty) AS net 
+FROM sales_detail
+LEFT JOIN product USING (product_id)
+WHERE sales_id = {{appsmith.store.sales_id}}
+ORDER BY {{data_table.sortOrder.column || 'sales_detail_id'}} {{data_table.sortOrder.order || "ASC"}};

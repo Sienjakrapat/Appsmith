@@ -1,0 +1,2 @@
+DELETE FROM public."purchase_header"
+  WHERE "purchase_id" = {{data_table.triggeredRow.purchase_id}};

@@ -1,0 +1,7 @@
+UPDATE public."supplier" SET
+		"supplier_name" = '{{update_form.fieldState.supplier_name.isVisible ? update_form.formData.supplier_name : update_form.sourceData.supplier_name}}',
+		"contact_name" = '{{update_form.fieldState.contact_name.isVisible ? update_form.formData.contact_name : update_form.sourceData.contact_name}}',
+    "phone" = '{{update_form.fieldState.phone.isVisible ? update_form.formData.phone : update_form.sourceData.phone}}',
+		"email" = '{{update_form.fieldState.email.isVisible ? update_form.formData.email : update_form.sourceData.email}}',
+		"address" = '{{update_form.fieldState.address.isVisible ? update_form.formData.address : update_form.sourceData.address}}'
+WHERE "supplier_id" = {{data_table.selectedRow.supplier_id}};

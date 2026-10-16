@@ -1,0 +1,42 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 62,
+  "boxShadow": "none",
+  "defaultImage": "{{data_table.selectedRow.product_image}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "defaultImage"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "evc63rzo88",
+  "leftColumn": 48,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 101,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 32,
+  "mobileTopRow": 89,
+  "needsErrorInfo": false,
+  "objectFit": "cover",
+  "parentColumnSpace": 19.3046875,
+  "parentId": "59rw5mx0bq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "topRow": 15,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "t5lzspsvtv",
+  "widgetName": "Image1"
+}

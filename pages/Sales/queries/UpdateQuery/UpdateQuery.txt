@@ -1,0 +1,6 @@
+UPDATE public."sales_header" SET
+		"sale_date" = '{{update_form.fieldState.sale_date.isVisible ? update_form.formData.sale_date : update_form.sourceData.sale_date}}',
+    "customer_id" = '{{update_form.fieldState.customer_id.isVisible ? update_form.formData.customer_id : update_form.sourceData.customer_id}}',
+		"employee_id" = '{{update_form.fieldState.employee_id.isVisible ? update_form.formData.employee_id : update_form.sourceData.employee_id}}',
+		"total_amount" = '{{update_form.fieldState.total_amount.isVisible ? update_form.formData.total_amount : update_form.sourceData.total_amount}}'
+WHERE "sale_id" = {{data_table.selectedRow.sale_id}};

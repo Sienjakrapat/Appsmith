@@ -1,0 +1,72 @@
+{
+  "appIsExample": false,
+  "applicationDetail": {
+    "appPositioning": {
+      "type": "FIXED"
+    },
+    "navigationSetting": {},
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  },
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "color": "#E3DEFF",
+  "evaluationVersion": 2,
+  "icon": "line-chart",
+  "pages": [
+    {
+      "id": "Product",
+      "isDefault": true
+    },
+    {
+      "id": "Customers",
+      "isDefault": false
+    },
+    {
+      "id": "Employee",
+      "isDefault": false
+    },
+    {
+      "id": "Supplier",
+      "isDefault": false
+    },
+    {
+      "id": "Sales",
+      "isDefault": false
+    },
+    {
+      "id": "Sales Details",
+      "isDefault": false
+    },
+    {
+      "id": "Print",
+      "isDefault": false
+    },
+    {
+      "id": "Purchase",
+      "isDefault": false
+    },
+    {
+      "id": "Purchase Details",
+      "isDefault": false
+    },
+    {
+      "id": "Sales Report",
+      "isDefault": false
+    }
+  ],
+  "unpublishedApplicationDetail": {
+    "appPositioning": {
+      "type": "FIXED"
+    },
+    "navigationSetting": {},
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+UPDATE public."sales_detail" SET
+		"sale_id" = '{{update_form.fieldState.sale_id.isVisible ? update_form.formData.sale_id : update_form.sourceData.sale_id}}',
+    "product_id" = '{{update_form.fieldState.product_id.isVisible ? update_form.formData.product_id : update_form.sourceData.product_id}}',
+		"quantity" = '{{update_form.fieldState.quantity.isVisible ? update_form.formData.quantity : update_form.sourceData.quantity}}',
+		"unit_price" = '{{update_form.fieldState.unit_price.isVisible ? update_form.formData.unit_price : update_form.sourceData.unit_price}}',
+		"subtotal" = '{{update_form.fieldState.subtotal.isVisible ? update_form.formData.subtotal : update_form.sourceData.subtotal}}'
+WHERE "detail_id" = {{data_table.selectedRow.detail_id}};

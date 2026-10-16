@@ -1,0 +1,12 @@
+INSERT INTO public."purchase_detail" (
+  "purchase_id",
+  "product_id",
+  "quantity",
+  "unit_cost"
+)
+VALUES (
+  {{insert_form.formData.purchase_id}},
+  {{insert_form.formData.product_id}},
+  {{insert_form.formData.quantity}},
+  {{insert_form.formData.unit_cost}}
+);

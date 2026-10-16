@@ -1,0 +1,2 @@
+DELETE FROM public."purchase_detail"
+  WHERE "detail_id" = {{data_table.triggeredRow.detail_id}};

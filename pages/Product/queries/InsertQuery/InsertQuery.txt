@@ -1,0 +1,16 @@
+INSERT INTO public."product" (
+	"product_name",
+	"size",
+	"price",
+	"stock_qty",
+	"product_url",
+	"product_image"
+)
+VALUES (
+	'{{insert_form.formData.product_name}}',
+	'{{insert_form.formData.size}}',
+	'{{insert_form.formData.price}}',
+	'{{insert_form.formData.stock_qty}}',
+	'{{insert_form.formData.product_url}}',
+	'{{FilePicker1.files[0].data}}'
+);

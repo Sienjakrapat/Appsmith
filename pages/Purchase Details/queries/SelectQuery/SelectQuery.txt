@@ -1,0 +1,5 @@
+SELECT * FROM public."purchase_detail"
+WHERE ({{!appsmith.URL.queryParams.purchase_id}} OR "purchase_id" = {{appsmith.URL.queryParams.purchase_id}})
+ORDER BY "detail_id" ASC
+LIMIT {{data_table.pageSize}}
+OFFSET {{(data_table.pageNo - 1) * data_table.pageSize}};

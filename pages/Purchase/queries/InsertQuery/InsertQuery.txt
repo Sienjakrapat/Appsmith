@@ -1,0 +1,12 @@
+INSERT INTO public."purchase_header" (
+	"purchase_id",
+	"purchase_date",
+	"supplier_id",
+	"employee_id",
+	"total_amount")
+VALUES (
+	'{{insert_form.formData.purchase_id}}',
+	'{{insert_form.formData.purchase_date}}',
+	'{{insert_form.formData.supplier_id}}',
+	'{{insert_form.formData.employee_id}}',
+	'{{insert_form.formData.total_amount}}');

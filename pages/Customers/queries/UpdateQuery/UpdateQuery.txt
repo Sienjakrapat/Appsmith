@@ -1,0 +1,6 @@
+UPDATE public."customer" SET
+		"name" = '{{update_form.fieldState.name.isVisible ? update_form.formData.name : update_form.sourceData.name}}',
+		"phone" = '{{update_form.fieldState.phone.isVisible ? update_form.formData.phone : update_form.sourceData.phone}}',
+    "email" = '{{update_form.fieldState.email.isVisible ? update_form.formData.email : update_form.sourceData.email}}',
+		"address" = '{{update_form.fieldState.address.isVisible ? update_form.formData.address : update_form.sourceData.address}}'
+WHERE "customer_id" = {{data_table.selectedRow.customer_id}};

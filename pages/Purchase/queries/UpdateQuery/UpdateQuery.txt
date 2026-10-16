@@ -1,0 +1,6 @@
+UPDATE public."purchase_header" SET
+		"purchase_date" = '{{update_form.fieldState.purchase_date.isVisible ? update_form.formData.purchase_date : update_form.sourceData.purchase_date}}',
+    "supplier_id" = '{{update_form.fieldState.supplier_id.isVisible ? update_form.formData.supplier_id : update_form.sourceData.supplier_id}}',
+		"employee_id" = '{{update_form.fieldState.employee_id.isVisible ? update_form.formData.employee_id : update_form.sourceData.employee_id}}',
+		"total_amount" = '{{update_form.fieldState.total_amount.isVisible ? update_form.formData.total_amount : update_form.sourceData.total_amount}}'
+WHERE "purchase_id" = {{data_table.selectedRow.purchase_id}};

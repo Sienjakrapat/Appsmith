@@ -1,0 +1,14 @@
+INSERT INTO public."supplier" (
+	"supplier_id",
+	"supplier_name",
+	"contact_name",
+	"phone",
+	"email",
+	"address")
+VALUES (
+	'{{insert_form.formData.supplier_id}}',
+	'{{insert_form.formData.supplier_name}}',
+	'{{insert_form.formData.contact_name}}',
+	'{{insert_form.formData.phone}}',
+	'{{insert_form.formData.email}}',
+	'{{insert_form.formData.address}}');

@@ -1,0 +1,10 @@
+INSERT INTO public."sales_detail" (
+  "sales_qty",
+  "product_id",
+  "sales_id"
+)
+VALUES (
+  '{{insert_form.formData.sales_qty}}',
+  '{{insert_form.formData.product_id}}',
+  '{{appsmith.store.sales_id}}'
+);
