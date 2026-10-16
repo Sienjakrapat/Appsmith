@@ -1,0 +1,78 @@
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.product (
+  product_id integer GENERATED ALWAYS AS IDENTITY NOT NULL,
+  product_name text NOT NULL,
+  size text,
+  price integer NOT NULL,
+  stock_qty integer DEFAULT 0,
+  product_image text,
+  CONSTRAINT product_pkey PRIMARY KEY (product_id)
+);
+CREATE TABLE public.customer (
+  customer_id integer GENERATED ALWAYS AS IDENTITY NOT NULL,
+  name text NOT NULL,
+  phone text,
+  email text,
+  address text,
+  CONSTRAINT customer_pkey PRIMARY KEY (customer_id)
+);
+CREATE TABLE public.employee (
+  employee_id integer GENERATED ALWAYS AS IDENTITY NOT NULL,
+  name text NOT NULL,
+  position text,
+  phone text,
+  CONSTRAINT employee_pkey PRIMARY KEY (employee_id)
+);
+CREATE TABLE public.supplier (
+  supplier_id integer GENERATED ALWAYS AS IDENTITY NOT NULL,
+  supplier_name text NOT NULL,
+  contact_name text,
+  phone text,
+  email text,
+  address text,
+  CONSTRAINT supplier_pkey PRIMARY KEY (supplier_id)
+);
+CREATE TABLE public.sales_header (
+  sale_id integer GENERATED ALWAYS AS IDENTITY NOT NULL,
+  sale_date date DEFAULT CURRENT_DATE,
+  customer_id integer,
+  employee_id integer,
+  total_amount integer DEFAULT 0,
+  CONSTRAINT sales_header_pkey PRIMARY KEY (sale_id),
+  CONSTRAINT sales_header_customer_id_fkey FOREIGN KEY (customer_id) REFERENCES public.customer(customer_id),
+  CONSTRAINT sales_header_employee_id_fkey FOREIGN KEY (employee_id) REFERENCES public.employee(employee_id)
+);
+CREATE TABLE public.sales_detail (
+  detail_id integer GENERATED ALWAYS AS IDENTITY NOT NULL,
+  sale_id integer,
+  product_id integer,
+  quantity integer NOT NULL,
+  unit_price integer NOT NULL,
+  subtotal integer DEFAULT (quantity * unit_price),
+  CONSTRAINT sales_detail_pkey PRIMARY KEY (detail_id),
+  CONSTRAINT sales_detail_sale_id_fkey FOREIGN KEY (sale_id) REFERENCES public.sales_header(sale_id),
+  CONSTRAINT sales_detail_product_id_fkey FOREIGN KEY (product_id) REFERENCES public.product(product_id)
+);
+CREATE TABLE public.purchase_header (
+  purchase_id integer GENERATED ALWAYS AS IDENTITY NOT NULL,
+  purchase_date date DEFAULT CURRENT_DATE,
+  supplier_id integer,
+  employee_id integer,
+  total_amount integer DEFAULT 0,
+  CONSTRAINT purchase_header_pkey PRIMARY KEY (purchase_id),
+  CONSTRAINT purchase_header_supplier_id_fkey FOREIGN KEY (supplier_id) REFERENCES public.supplier(supplier_id),
+  CONSTRAINT purchase_header_employee_id_fkey FOREIGN KEY (employee_id) REFERENCES public.employee(employee_id)
+);
+CREATE TABLE public.purchase_detail (
+  detail_id integer GENERATED ALWAYS AS IDENTITY NOT NULL,
+  purchase_id integer,
+  product_id integer,
+  quantity integer NOT NULL,
+  unit_cost integer NOT NULL,
+  subtotal integer DEFAULT (quantity * unit_cost),
+  CONSTRAINT purchase_detail_pkey PRIMARY KEY (detail_id),
+  CONSTRAINT purchase_detail_purchase_id_fkey FOREIGN KEY (purchase_id) REFERENCES public.purchase_header(purchase_id),
+  CONSTRAINT purchase_detail_product_id_fkey FOREIGN KEY (product_id) REFERENCES public.product(product_id)
+);
